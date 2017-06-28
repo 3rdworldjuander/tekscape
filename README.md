@@ -1,8 +1,9 @@
 # tekscape
 work automation stuff
 
-Extracting multiple tables from CSV
-## (1) First Approach  
+## Extracting multiple tables from CSV  
+https://stackoverflow.com/questions/34184841/python-pandas-read-csv-file-containing-multiple-tables?rq=1
+### (1) First Approach  
 df = pd.read_csv("jahmyst2.csv", header=None, names=range(3))  
 table_names = ["Inventory", "HP BladeSystem Rack", "Network Interface"]  
 groups = df[0].isin(table_names).cumsum()  
@@ -29,7 +30,7 @@ table: Inventory
 3  dg-enc05_vc_domain           NaN        Unknown  
 4        dg-enc05-oa1  172.20.0.213         Normal  
 
-## (2) Second Approach  
+### (2) Second Approach  
 df = pd.read_csv('path_to_file')      
 index_positions = []  
 for table in table_names:  
