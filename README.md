@@ -52,3 +52,9 @@ tables = {}
 for position in index_positions[:-1]:  
     table_no = index_position.index(position)  
     tables[table_names[table_no] = df.loc[position:index_positions[table_no+10]]  
+    
+## Renaming column name to replace space with _  
+https://github.com/pandas-dev/pandas/issues/6508
+cols = df.columns
+cols = cols.map(lambda x: x.replace(' ', '_') if isinstance(x, (str, unicode)) else x)
+df.columns = cols
