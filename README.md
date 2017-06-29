@@ -3,6 +3,14 @@ Work Automation Stuff
 
 # 1. SMARTNet Parser  
 
+## Quote Conditions  
+- Incumbent quote  
+  -  Client_Discount_INCUMBENT = 'L15'  
+  -  Tekscape_Discount_INCUMBENT = 'C23'  
+- Takeover quote  
+  -  Client_Discount_TAKEOVER = 'L10'  
+  -  Tekscape_Discount_TAKEOVER = 'C15'  
+
 ## Observations on the new CCW-R quote format  
 1. Leading and trailing whitespace on column headers of Quote Details table on 241003158  
 2. Macro sheet (2 sheets seen) on 241003158  
@@ -54,7 +62,13 @@ for position in index_positions[:-1]:
     tables[table_names[table_no] = df.loc[position:index_positions[table_no+10]]  
     
 ## Renaming column name to replace space with _  
-https://github.com/pandas-dev/pandas/issues/6508
+https://github.com/pandas-dev/pandas/issues/6508  
 cols = df.columns
 cols = cols.map(lambda x: x.replace(' ', '_') if isinstance(x, (str, unicode)) else x)
 df.columns = cols
+
+## Copying data to system clipboard  
+>>> import pyperclip  
+>>> pyperclip.copy('The text to be copied to the clipboard.')  
+>>> pyperclip.paste()  
+'The text to be copied to the clipboard.'  
