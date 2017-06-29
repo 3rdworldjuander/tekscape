@@ -1,5 +1,14 @@
 # tekscape
-work automation stuff
+Work Automation Stuff  
+
+# 1. SMARTNet Parser  
+
+## Observations on the new CCW-R quote format  
+1. Leading and trailing whitespace on column headers of Quote Details table on 241003158  
+2. Macro sheet (2 sheets seen) on 241003158  
+3. Missing "Invoice Summary" table title/name on 241003158  
+4. 'Extended List Price' column on Quote Details table should be basis of quote but make sure to divide by Quantity before posting to Quosal  
+
 
 ## Extracting multiple tables from CSV  
 https://stackoverflow.com/questions/34184841/python-pandas-read-csv-file-containing-multiple-tables?rq=1
