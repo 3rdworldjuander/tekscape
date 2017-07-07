@@ -72,3 +72,7 @@ df.columns = cols
 >>> pyperclip.copy('The text to be copied to the clipboard.')  
 >>> pyperclip.paste()  
 'The text to be copied to the clipboard.'  
+
+## Writing to Excel  
+https://pypi.python.org/pypi/xlwt  
+http://xlsxwriter.readthedocs.io/working_with_pandas.html  
