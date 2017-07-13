@@ -79,3 +79,6 @@ http://xlsxwriter.readthedocs.io/working_with_pandas.html
 
 ## Running python script from command line with arguments  
 https://stackoverflow.com/questions/7860872/run-python-scripts-from-windows-command-line-argument-not-passed  
+
+## Error handling of missing column name  
+https://stackoverflow.com/questions/41100373/pandas-read-csv-usecols-accepting-non-existent-column-names  
