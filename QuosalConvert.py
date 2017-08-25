@@ -100,7 +100,7 @@ def clean_quo(df, l_mod, c_mod):
 
 #### Function to check whether the quote is a Takeover or Incumbent quote and return correct l_mod and c_mod values.
 def check_takeover(df):
-    if test['Takeover_Line'].iloc[0] == 'No':
+    if df['Takeover_Line'].iloc[0] == 'No':
 #Incumbent values l_mod = 15, c_mod = 23
         l_mod = 15
         c_mod = 23
