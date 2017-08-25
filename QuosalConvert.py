@@ -121,7 +121,7 @@ def check_takeover(df):
 
 
 
-def create_quosal(file, l_mod, c_mod):
+def create_quosal(file):
     ccw = get_tables(file)
     ccw_inv = prep_tables(ccw, "Invoice Summary")
     ccw_quo = prep_tables(ccw, "Quote Details")
@@ -167,13 +167,13 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(filename)
-            create_quosal(filename, 15, 35)
+            create_quosal(filename)
             return send_from_directory(app.config['UPLOAD_FOLDER'], 'quosal_' + filename, as_attachment=True)
             return redirect(url_for('upload_file', filename=filename))
     return '''
     <!doctype html>
     <title>Upload CCW-R File</title>
-    <h1>Upload CCW-R File for Quoosal Template Conversion</h1>
+    <h1>Upload CCW-R File for Quosal Template Conversion</h1>
     <form method=post enctype=multipart/form-data>
       <p><input type=file name=file>
          <input type=submit value=Upload>
