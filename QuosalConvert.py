@@ -98,6 +98,18 @@ def clean_quo(df, l_mod, c_mod):
     
     return df
 
+#### Function to check whether the quote is a Takeover or Incumbent quote and return correct l_mod and c_mod values.
+def check_takeover(df):
+    if test['Takeover_Line'].iloc[0] == 'No':
+#Incumbent values l_mod = 15, c_mod = 23
+        l_mod = 15
+        c_mod = 23
+    else:
+#Takeover values l_mod = 10, c_mod = 15
+        l_mod = 10
+        c_mod = 15
+    return l_mod, c_mod	
+
 #### FINAL QUOTE, THIS SHOULD HAVE PRICE CORRECTION WHICH WILL BE APPLIED ON THE QUOTE DETAILS DATAFRAME ####
 
 
@@ -113,7 +125,7 @@ def create_quosal(file, l_mod, c_mod):
     ccw = get_tables(file)
     ccw_inv = prep_tables(ccw, "Invoice Summary")
     ccw_quo = prep_tables(ccw, "Quote Details")
-    
+    l_mod, c_mod = check_takeover(ccw_quo)
     inv = clean_inv(ccw_inv, l_mod, c_mod)
     quo = clean_quo(ccw_quo, l_mod, c_mod)
     
