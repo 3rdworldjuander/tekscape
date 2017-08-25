@@ -141,6 +141,7 @@ def create_quosal(file, l_mod, c_mod):
     writer = pd.ExcelWriter(new_file, engine='xlsxwriter')
     inv.to_excel(writer, sheet_name='Invoice Line Item Detail', columns = ['Service_Ordering_SKU', 'Quantity', 'Unit_Price', 'Client_Discount', 'Tekscape_Discount'], index=False)
     quo.to_excel(writer, sheet_name='Quote Line Item Detail', columns = ['PAK/Serial_Number', 'SKU', 'Product_Number', 'Quantity', 'Target_Contract_Number', 'Start_Date', 'End_Date', 'Unit_Price', 'Client_Discount', 'Tekscape_Discount'], index=False)
+    ccw_quo.to_excel(writer, sheet_name=file, index=False)
     writer.save()
     return 
 
