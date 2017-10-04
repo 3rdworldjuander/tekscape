@@ -1,7 +1,4 @@
-# Tekscape  
-Work Automation Stuff  
-
-# 1. SMARTNet Parser  
+# CCW-R Parser Notes
 
 ## Quote Conditions  
 - Incumbent quote  
@@ -16,7 +13,6 @@ Work Automation Stuff
 2. Macro sheet (2 sheets seen) on 241003158  
 3. Missing "Invoice Summary" table title/name on 241003158  
 4. 'Extended List Price' column on Quote Details table should be basis of quote but make sure to divide by Quantity before posting to Quosal  
-
 
 ## Extracting multiple tables from CSV  
 https://stackoverflow.com/questions/34184841/python-pandas-read-csv-file-containing-multiple-tables?rq=1
