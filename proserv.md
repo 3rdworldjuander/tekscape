@@ -1,7 +1,7 @@
 import pandas as pd  
 from string import punctuation  
 
-# Read CW Product export  
+## Read CW Product export  
 soitems = pd.read_csv("JH0375.csv")  
 
 # Total ProServ Price  
