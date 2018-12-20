@@ -20,4 +20,7 @@ subitems = pd.Series(['PRO-UC-L1', 'PRO-NET-L1', 'PRO-SVR-L1', 'PRO-PMO-L1', 'PR
 soitems['Product ID'].isin(subitems)  
 
 # Output dataframe of all subitem SKUs  
-soitems[soitems['Product ID'].isin(subitems)]  
+soitems_sub = soitems[soitems['Product ID'].isin(subitems)]  
+
+# Groupby Product ID, Price, and Cost  and get Total Quantity of each grouping  
+soitems_sub.groupby(['Product ID', 'Unit Price', 'Unit Cost'])['Quantity'].sum().reset_index(name = 'Total Quantity')  
