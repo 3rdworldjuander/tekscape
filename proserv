@@ -1,0 +1,14 @@
+import pandas as pd  
+from string import punctuation  
+
+# Read CW Product export  
+soitems = pd.read_csv("JH0375.csv")  
+
+# Total ProServ Price  
+proserv_price = soitems[soitems['Product Class'].str.contains('Bundle')]['Unit Price'].sum()  
+
+# Total ProServ Cost  
+proserv_cost = soitems[soitems['Product Class'].str.contains('Bundle')]['Unit Cost'].sum()  
+
+# Remove leading "-" and spaces from sub-item SKUs  
+soitems['Product ID'][:].str.lstrip(punctuation).str.lstrip()  
