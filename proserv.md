@@ -14,7 +14,7 @@ proserv_cost = soitems[soitems['Product Class'].str.contains('Bundle')]['Unit Co
 soitems['Product ID'][:].str.lstrip(punctuation).str.lstrip()  
 
 ## Create Sub-items series    
-subitems = pd.Series(['PRO-UC-L1', 'PRO-NET-L1', 'PRO-SVR-L1', 'PRO-PMO-L1', 'PRO-SMARTHANDS-L1', 'Risk'])
+subitems = pd.Series(['PRO-UC-L1', 'PRO-NET-L1', 'PRO-SVR-L1', 'PRO-PMO-L1', 'PRO-SMARTHANDS-L1', 'Risk', 'SUBCON'])
 
 ## Get indexes of rows with subitem SKUs  
 soitems['Product ID'].isin(subitems)  
