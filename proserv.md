@@ -31,6 +31,18 @@ template = {
 
 out_table = pd.DataFrame(template, columns=['Product ID', 'Quantity', 'Price', 'Cost', 'Customer Description'])
 
+# Valus to be updated  
+out_table.at[0, 'Price'] = 50% Proserv Price  
+out_table.at[7, 'Price'] = 20% Proserv Price  
+out_table.at[8, 'Price'] = 20% Proserv Price  
+out_table.at[9, 'Price'] = 10% Proserv Price  
+
+out_table.at[0, 'Cost'] = 50% Proserv Cost  
+out_table.at[7, 'Cost'] = 20% Proserv Cost  
+out_table.at[8, 'Cost'] = 20% Proserv Cost  
+out_table.at[9, 'Cost'] = 10% Proserv Cost  
+
+
 # Main app  
 
 ## Read CW Product export  
@@ -51,3 +63,4 @@ soitems_sub = soitems[soitems['Product ID'].isin(subitems)]
 ## Groupby Product ID, Price, and Cost  and get Total Quantity of each grouping  
 sub_agg = soitems_sub.groupby(['Product ID', 'Unit Price', 'Unit Cost'])['Quantity'].sum().reset_index(name = 'Total Quantity')  
 
+## Join Template dataframe with sub_agg  
