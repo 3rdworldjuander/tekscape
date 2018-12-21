@@ -14,19 +14,19 @@ subcons = pd.Series(['PRO-SMARTHANDS-L1', 'PRO-SMARTHANDS'])
 ## Create output template  
 template = {
 'Product ID' : 
-['PKG-PRO-PROFSVCS', 'PRO-NET-L1', 'PRO-SVR-L1', 'PRO-UC-L1', 'PRO-PMO-L1', 'PRO-SMARTHANDS-L1', 'Risk', 'PKG-PRO-PROFSVCS', 'PKG-PRO-PROFSVCS', 'PKG-PRO-PROFSVCS']
+['PKG-PRO-PROFSVCS', 'PKG-PRO-PROFSVCS', 'PKG-PRO-PROFSVCS', 'PKG-PRO-PROFSVCS']
 ,
 'Quantity' : 
-[1, 0, 0, 0, 0, 0, 0, 1, 1, 1]
+[1, 1, 1, 1]
 ,
 'Price' :
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0]
 ,
 'Cost' :
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0]
 ,
 'Customer Description' :
-['Professional Services: 50%', '', '', '', '', '', '', 'Professional Services: 20%', 'Professional Services: 20%', 'Professional Services: 10%']
+['Professional Services: 50%', 'Professional Services: 20%', 'Professional Services: 20%', 'Professional Services: 10%']
 }
 
 out_table = pd.DataFrame(template, columns=['Product ID', 'Quantity', 'Price', 'Cost', 'Customer Description'])
@@ -61,7 +61,7 @@ soitems['Product ID'] = soitems['Product ID'][:].str.lstrip(punctuation).str.lst
 soitems_sub = soitems[soitems['Product ID'].isin(subitems)]  
 
 ## Groupby Product ID, Price, and Cost  and get Total Quantity of each grouping  
-sub_agg = soitems_sub.groupby(['Product ID', 'Unit Price', 'Unit Cost'])['Quantity'].sum().reset_index(name = 'Total Quantity')  
+sub_agg = soitems_sub.groupby(['Product ID', 'Unit Price', 'Unit Cost'])['Quantity'].sum().reset_index(name = 'Quantity')  
 
 ## Get PRO-SMARTHANDS-L1 Total Cost for subtracting from Total Proserv Cost  
 
