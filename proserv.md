@@ -31,7 +31,7 @@ template = {
 
 out_table = pd.DataFrame(template, columns=['Product ID', 'Quantity', 'Price', 'Cost', 'Customer Description'])
 
-# Valus to be updated  
+## Values to be updated  
 out_table.at[0, 'Price'] = 50% Proserv Price  
 out_table.at[7, 'Price'] = 20% Proserv Price  
 out_table.at[8, 'Price'] = 20% Proserv Price  
@@ -62,5 +62,8 @@ soitems_sub = soitems[soitems['Product ID'].isin(subitems)]
 
 ## Groupby Product ID, Price, and Cost  and get Total Quantity of each grouping  
 sub_agg = soitems_sub.groupby(['Product ID', 'Unit Price', 'Unit Cost'])['Quantity'].sum().reset_index(name = 'Total Quantity')  
+
+## Get PRO-SMARTHANDS-L1 Total Cost for subtracting from Total Proserv Cost  
+
 
 ## Join Template dataframe with sub_agg  
