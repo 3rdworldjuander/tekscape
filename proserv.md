@@ -1,4 +1,5 @@
 # Import Modules  
+
 import pandas as pd  
 from string import punctuation  
 
@@ -9,6 +10,26 @@ subitems = pd.Series(['PRO-UC-L1', 'PRO-NET-L1', 'PRO-SVR-L1', 'PRO-PMO-L1', 'Ri
 
 ## Subcon variations series  
 subcons = pd.Series(['PRO-SMARTHANDS-L1', 'PRO-SMARTHANDS'])  
+
+## Create output template  
+template = {
+'Product ID' : 
+['PKG-PRO-PROFSVCS', 'PRO-NET-L1', 'PRO-SVR-L1', 'PRO-UC-L1', 'PRO-PMO-L1', 'PRO-SMARTHANDS-L1', 'Risk', 'PKG-PRO-PROFSVCS', 'PKG-PRO-PROFSVCS', 'PKG-PRO-PROFSVCS']
+,
+'Quantity' : 
+[1, 0, 0, 0, 0, 0, 0, 1, 1, 1]
+,
+'Price' :
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+,
+'Cost' :
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+,
+'Customer Description' :
+['Professional Services: 50%', '', '', '', '', '', '', 'Professional Services: 20%', 'Professional Services: 20%', 'Professional Services: 10%']
+}
+
+out_table = pd.DataFrame(template, columns=['Product ID', 'Quantity', 'Price', 'Cost', 'Customer Description'])
 
 # Main app  
 
