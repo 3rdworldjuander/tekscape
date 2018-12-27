@@ -32,15 +32,16 @@ template = {
 out_table = pd.DataFrame(template, columns=['Product ID', 'Quantity', 'Price', 'Cost', 'Customer Description'])
 
 ## Values to be updated  
+### values must be updated before concat with sub_agg
 out_table.at[0, 'Price'] = 50% Proserv Price  
-out_table.at[7, 'Price'] = 20% Proserv Price  
-out_table.at[8, 'Price'] = 20% Proserv Price  
-out_table.at[9, 'Price'] = 10% Proserv Price  
+out_table.at[1, 'Price'] = 20% Proserv Price  
+out_table.at[2, 'Price'] = 20% Proserv Price  
+out_table.at[3, 'Price'] = 10% Proserv Price  
 
 out_table.at[0, 'Cost'] = 50% Proserv Cost  
-out_table.at[7, 'Cost'] = 20% Proserv Cost  
-out_table.at[8, 'Cost'] = 20% Proserv Cost  
-out_table.at[9, 'Cost'] = 10% Proserv Cost  
+out_table.at[1, 'Cost'] = 20% Proserv Cost  
+out_table.at[2, 'Cost'] = 20% Proserv Cost  
+out_table.at[3, 'Cost'] = 10% Proserv Cost  
 
 
 # Main app  
