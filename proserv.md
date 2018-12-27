@@ -63,7 +63,11 @@ soitems_sub = soitems[soitems['Product ID'].isin(subitems)]
 ## Groupby Product ID, Price, and Cost  and get Total Quantity of each grouping  
 sub_agg = soitems_sub.groupby(['Product ID', 'Unit Price', 'Unit Cost'])['Quantity'].sum().reset_index(name = 'Quantity')  
 
+## Split subcon types from sub_agg  
+
+
 ## Get PRO-SMARTHANDS-L1 Total Cost for subtracting from Total Proserv Cost  
 
 
-## Join Template dataframe with sub_agg  
+## Inset sub_agg  into Template df  
+new = pd.concat([out_table.ix[:0], agg_df, out_table.ix[1:]]).reset_index(drop=True)
